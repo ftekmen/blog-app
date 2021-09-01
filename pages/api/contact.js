@@ -13,8 +13,11 @@ async function handler(req, res) {
     const newMessage = { email, name, message };
 
     let client;
+
+    const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_cluster}.luplk.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
+
     try {
-      client = await MongoClient.connect('mongodb+srv://blog-user:YrjrUP68QMvpx7zp@cluster0.luplk.mongodb.net/blog-app?retryWrites=true&w=majority');
+      client = await MongoClient.connect(connectionString);
     } catch (error) {
       res.status(500).json({ message: 'Could not connect to database!' });
       return;
@@ -26,7 +29,7 @@ async function handler(req, res) {
       const result = await db.collection('messages').insertOne(newMessage);
     } catch (error) {
       client.close();
-      res.status(500).json({ message: 'Storing message failed!'});
+      res.status(500).json({ message: 'Storing message failed!' });
       return;
     }
 
