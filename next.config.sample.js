@@ -6,10 +6,10 @@ module.exports = (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return withTM({
       env: {
-        mongodb_username: 'blog-user',
-        mongodb_password: 'TeqpgzNz2cgArLRm',
-        mongodb_cluster: 'cluster0',
-        mongodb_database: 'blog-app-dev'
+        mongodb_username: 'sample-dev-user',
+        mongodb_password: 'sample-dev-pass',
+        mongodb_cluster: 'sample-dev-cluster',
+        mongodb_database: 'sample-dev-db'
       },
       webpack5: false
     });
@@ -17,10 +17,10 @@ module.exports = (phase) => {
 
   return withTM({
     env: {
-      mongodb_username: 'blog-user',
-      mongodb_password: 'TeqpgzNz2cgArLRm',
-      mongodb_cluster: 'cluster0',
-      mongodb_database: 'blog-app'
+      mongodb_username: 'sample-user',
+      mongodb_password: 'sample-pass',
+      mongodb_cluster: 'sample-cluster',
+      mongodb_database: 'sample-db'
     },
     webpack5: false
   });
