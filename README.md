@@ -2,4 +2,4 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-[Blog-app Demo] (https://blog-app-ftekmen.vercel.app)
+[Blog-app Demo](https://blog-app-ftekmen.vercel.app)
